@@ -22,7 +22,7 @@ class Employee {
   late String name;
   late String dateOfBirth;
   late double salary;
-  late List<String> permissions;
+  late Set<String> permissions;
   late String jobTitle;
   late String jobDescription;
 
