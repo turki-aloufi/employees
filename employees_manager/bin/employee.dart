@@ -27,7 +27,7 @@ class Employee {
   late String jobDescription;
 
   printInfo() {
-    print("----------My info----------");
+    print("\n----------My info----------");
     print("Id: $id");
     print("Name: $name");
     print("Date of Birth: $dateOfBirth");
@@ -35,5 +35,6 @@ class Employee {
     print("Permissions: $permissions");
     print("Job title: $jobTitle");
     print("JobDescription: $jobDescription");
+    print("---------------------------");
   }
 }

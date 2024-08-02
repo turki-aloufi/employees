@@ -3,41 +3,41 @@ import 'management_functions.dart';
 
 addInitialData() {
   Employee emp1 = Employee.initial(
-      id: 0001,
-      name: "Turki",
+      id: 1,
+      name: "Abdullah",
       dateOfBirth: "2000-01-01",
-      permissions: {"view personal info"},
-      salary: 10000,
-      jobTitle: "Junior flutter developer",
+      permissions: {"add", "delete", "update", "read"},
+      salary: 9000,
+      jobTitle: "flutter developer",
       jobDescription:
-          "Collaborate with cross-functional teams to define, design, and ship new features to mobile apps.");
+          "builds and maintains mobile and web applications using the Flutter framework.");
   Employee emp2 = Employee.initial(
       id: 0002,
       name: "Ahmed",
-      dateOfBirth: "2001-07-09",
-      permissions: {"add", "delete", "update"},
-      salary: 10000,
+      dateOfBirth: "1990-07-09",
+      permissions: {},
+      salary: 15000,
       jobTitle: "Penetration tester",
       jobDescription:
-          "Collaborate with cross-functional teams to define, design, and ship new features to mobile apps.");
+          " identifies and exploits security vulnerabilities in systems and networks to enhance cybersecurity.");
   Employee emp3 = Employee.initial(
       id: 0003,
       name: "Khalid",
-      dateOfBirth: "2001-07-09",
+      dateOfBirth: "1980-02-15",
       permissions: {"add", "delete", "update"},
-      salary: 10000,
-      jobTitle: "project manager",
+      salary: 20000,
+      jobTitle: "Project manager",
       jobDescription:
-          "Collaborate with cross-functional teams to define, design, and ship new features to mobile apps.");
+          "Plans, executes, and oversees projects, ensuring they meet goals, deadlines, and budgets.");
   Employee emp4 = Employee.initial(
       id: 0004,
       name: "Muhammad",
-      dateOfBirth: "2001-07-09",
+      dateOfBirth: "1987-11-26",
       permissions: {"add", "delete", "update"},
-      salary: 10000,
+      salary: 150000,
       jobTitle: "HR ",
       jobDescription:
-          "Collaborate with cross-functional teams to define, design, and ship new features to mobile apps.");
+          "Manage recruitment, employee relations, benefits, compliance, and organizational development.");
   employees.add(emp1);
   employees.add(emp2);
   employees.add(emp3);

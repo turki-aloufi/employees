@@ -10,7 +10,7 @@ printAllEmployees() {
     print("Name: ${emp.name}");
     print("Date of birth: ${emp.dateOfBirth}");
     print("Salary: ${emp.salary}");
-
+    print("Permissions: ${emp.permissions}");
     print("Job title: ${emp.jobTitle}");
     print("Job description: ${emp.jobDescription}");
   }
@@ -40,13 +40,13 @@ getById(int id) {
       return emp;
     }
   }
-  print("Employee is not found");
+  return("\nEmployee is not found");
 }
 
 printById(int id) {
   for (var emp in employees) {
     if (id == emp.id) {
-      print("----------My info----------");
+      print("\n----------Employee info----------");
       print("Id: $id");
       print("Name: ${emp.name}");
       print("Date of Birth: ${emp.dateOfBirth}");
@@ -54,15 +54,21 @@ printById(int id) {
       print("Permissions: ${emp.permissions}");
       print("Job title: ${emp.jobTitle}");
       print("JobDescription: ${emp.jobDescription}");
+      print("---------------------------------");
+
       return;
     }
   }
-  print("Employee is not found");
+  print("\nEmployee is not found");
 }
 
 deleteEmployee(int id) {
   var emp = getById(id);
-  employees.remove(emp);
+  if (employees.remove(emp)) {
+    print("\ndeleted successfully");
+  } else {
+    print("\nyou should enter an existing permission");
+  }
 }
 
 updateEmployee(int id) {
@@ -70,13 +76,13 @@ updateEmployee(int id) {
   String choice;
   bool loop = true;
   do {
-    print("What do you want to update: ");
+    print("\n\n----------What do you want to update----------");
     print("1-Salary");
     print("2-Permissions");
     print("3-Job description");
     choice = stdin.readLineSync()!;
     if (choice != "1" && choice != "2" && choice != "3") {
-      print("please choose by number: ");
+      print("\nplease choose by number: ");
       continue;
     }
     loop = false;
@@ -84,28 +90,66 @@ updateEmployee(int id) {
 
   switch (choice) {
     case "1":
-      print("enter the new salary:");
+      print("\nenter the new salary:");
       double newSalary = double.parse(stdin.readLineSync()!);
       emp.salary = newSalary;
-      print("The new salary is: ${emp.salary}");
+      print("\nThe new salary is: ${emp.salary}");
       break;
     case "2":
-      Set<String> permissions = {};
-      late String input;
+      bool exit = false;
       do {
-        print("enter a new permission:");
-        String newPermission = stdin.readLineSync()!;
-        emp.permissions = newPermission;
-        permissions.add(newPermission);
-        print("to add another permission press 1,\nto exit press enter.");
-        input = stdin.readLineSync()!;
-      } while (input == "1");
+        print("\n----------Choose by number----------");
+        print("1-add new permission");
+        print("2-delete permission");
+        print("to exit press enter");
+        print("-----------------------------------");
+
+        String option = stdin.readLineSync()!;
+        switch (option) {
+          case "1":
+            addPermission(emp);
+            break;
+          case "2":
+            deletePermission(emp);
+            break;
+          default:
+            exit = true;
+        }
+      } while (!exit);
+
       break;
     case "3":
-      print("enter the new job description:");
+      print("\nenter the new job description:");
       String newJobDescription = stdin.readLineSync()!;
       emp.jobDescription = newJobDescription;
-      print("The new job description is: ${emp.jobDescription}");
+      print("\nThe new job description is: ${emp.jobDescription}");
       break;
   }
+}
+
+addPermission(Employee emp) {
+  late String input;
+  do {
+    print("\nenter a new permission:");
+    String newPermission = stdin.readLineSync()!;
+    emp.permissions.add(newPermission);
+    print("\nto add another permission press 1,\nto exit press enter.");
+    input = stdin.readLineSync()!;
+  } while (input == "1");
+}
+
+deletePermission(Employee emp) {
+  late String input;
+  do {
+    print("\nwhat permission do you want to delete?");
+    print(emp.permissions);
+    String permission = stdin.readLineSync()!;
+    if (emp.permissions.remove(permission)) {
+      print("\ndeleted successfully");
+    } else {
+      print("\nyou should enter an existing permission");
+    }
+    print("\n\nto delete another permission press 1,\nto exit press enter.");
+    input = stdin.readLineSync()!;
+  } while (input == "1" && emp.permissions.isNotEmpty);
 }
