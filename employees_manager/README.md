@@ -1,97 +1,97 @@
-# Employee Management CLI
+# Employee Management CLI Application
 
-This project is a command-line interface (CLI) application for managing employee information.
+This is a CLI-based Employee Management System built with Dart. The application allows users to manage employee information, including adding, updating, deleting, and viewing employee details.
 
-## Prerequisites
 
-Before running the project, ensure you have the following installed:
+## Installation
 
-- Dart SDK
-
-## Project Structure
-
-- `management_functions.dart`: Contains functions for managing employees.
-- `employee.dart`: Defines the `Employee` class and its properties.
-- `initial_data.dart`: Contains a function that adds several employees to the system for testing.
-- `interface.dart`: Contains a function that creates an interactive CLI that makes the system useful.
-- `employees_manager.dart`: The main entry point of the application, where functions are invoked.
-
-## How to Run
-
-1. **Clone the repository:**
-
+1. Ensure you have Dart installed on your system. If not, you can download it from [Dart's official website](https://dart.dev/get-dart).
+2. Clone this repository:
     ```bash
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/turki-aloufi/employees.git
+    ```
+3. Navigate to the project directory:
+    ```bash
+    cd employees_manager
     ```
 
+## Usage
 
-2. **Run the application:**
-
-    Execute the following command in the project directory:
-
+1. Run the application:
     ```bash
     dart run
     ```
+2. Follow the on-screen instructions to interact with the CLI.
 
-    You should see the welcome message and be prompted to enter your user ID.
+## Features
 
-## How to Use the CLI
+- **Print My Info**: Display the information of the logged-in employee.
+- **Add a New Employee**: Add a new employee to the system.
+- **Delete an Existing Employee**: Remove an employee from the system.
+- **Update Employee Info**: Update details of an existing employee.
+- **Print Employee by ID**: Display information of a specific employee by their ID.
+- **Print All Employees**: List all employees in the system.
 
-1. **Enter your user ID:**
+## System preview
 
-    ```text
-    please enter your id:
-    ```
+### Welcome Screen and Login
+Once the system starts, a welcoming message will be displayed, and the user will be prompted to log in using his ID.
 
-    - The application will fetch your user information based on the ID provided.
+![Welcome Screen](./img/image.png)
 
-2. **Navigate through the menu options:**
+### Main Menu
+If the user has logged in successfully, the following main menu will appear.
 
-    ```text
-    ----------Choose by number----------
-    1-Print my info
-    2-Add a new employee
-    3-Delete an existing employee
-    4-Update employee info
-    5-Print employee by id
-    6-Print all employees
-    to exit press enter
-    -----------------------------------
-    ```
+![Main Menu](./img/image-2.png)
 
-    - **1**: Print your personal information.
-    - **2**: Add a new employee (requires 'add' permission).
-    - **3**: Delete an existing employee (requires 'delete' permission).
-    - **4**: Update employee information (requires 'update' permission).
-    - **5**: Print employee information by ID (requires 'read' permission).
-    - **6**: Print all employees' information (requires 'read' permission).
-    - Press `Enter` without input to exit the application.
+### Print my info
+If the user pressed 1, the system will print his info in the following format.
 
-## Example Usage
+![Print my info](./img/image-3.png)
 
-### Adding a New Employee
+### Add Employee
+If the user pressed 2 and he has the permission "add", the system will prompt him to enter employee data as following, and then add the new employee to the system.
 
-- Select option `2` from the menu.
-- Follow the prompts to enter the new employee's details.
+![Add Employee](./img/image-4.png)
 
-### Deleting an Employee
+### Print all Employees
+If the user pressed 6 and he has the permission "read", the system will print all employees data.
 
-- Select option `3` from the menu.
-- Enter the ID of the employee to be deleted.
+Notice that the last employee is the one we have just added.
 
-### Updating Employee Information
 
-- Select option `4` from the menu.
-- Enter the ID of the employee to be updated and follow the prompts.
+![Print all Employees](./img/image-5.png)
 
-### Printing Employee Information by ID
+### Update Employee
+If the user pressed 4 and he has the permission "update", the system will allow him to update salary, permissions and job description.
+let's test updating faisal's info.
 
-- Select option `5` from the menu.
-- Enter the ID of the employee whose information you want to print.
+1. Update salary.
 
-### Printing All Employees
+![Update Employee](./img/image-6.png)
 
-- Select option `6` from the menu.
+2. Add a new permission.
+
+![Add a new permission](./img/image-7.png)
+
+3. Delete permission.
+
+![Delete permission](./img/image-8.png)
+
+4. Update job description.
+
+![Update job description](./img/image-9.png)
+
+### Print employee by id
+If the user pressed 5 and he has the permission "read", the system will print the employee which his id was entered.
+
+Notice that his info is updated.
+
+![Print employee by id](./img/image-10.png)
+
+### Delete Employee
+If the user pressed 5 and he has the permission "delete", the system will prompt him to to delete employee by entering his id.
+
+![Delete Employee](./img/image-11.png)
 
 

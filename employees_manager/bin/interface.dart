@@ -3,7 +3,7 @@ import 'dart:io';
 import 'employee.dart';
 
 printUI() {
-  print("----------Welcome to our company----------");
+  print("\n----------Welcome to our company----------");
   late var user;
   while (true) {
     print("\nplease enter your id:");
@@ -27,7 +27,7 @@ printUI() {
     print("5-Print employee by id");
     print("6-Print all employees");
     print("to exit press enter");
-    print("-----------------------------------");
+    print("------------------------------------");
     String option = stdin.readLineSync()!;
     switch (option) {
       case "1":
@@ -41,19 +41,19 @@ printUI() {
 
         print("\nenter employee name:");
         String name = stdin.readLineSync()!;
-        print("enter employee birthday:");
+        print("\nenter employee birthday:");
         String birthday = stdin.readLineSync()!;
 
-        print("enter employee job title:");
+        print("\nenter employee job title:");
         String title = stdin.readLineSync()!;
 
-        print("enter employee job description:");
+        print("\nenter employee job description:");
         String jobDescription = stdin.readLineSync()!;
 
-        print("enter employee salary:");
+        print("\nenter employee salary:");
         double salary = double.parse(stdin.readLineSync()!);
 
-        print("enter employee permissions:");
+        print("\nenter employee permissions:");
         Set<String> permissions = {};
 
         Employee emp = Employee(

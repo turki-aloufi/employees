@@ -6,7 +6,7 @@ addInitialData() {
       id: 1,
       name: "Abdullah",
       dateOfBirth: "2000-01-01",
-      permissions: {"add", "delete", "update", "read"},
+      permissions: {},
       salary: 9000,
       jobTitle: "flutter developer",
       jobDescription:
@@ -33,7 +33,7 @@ addInitialData() {
       id: 0004,
       name: "Muhammad",
       dateOfBirth: "1987-11-26",
-      permissions: {"add", "delete", "update"},
+      permissions: {"add", "delete", "update", "read"},
       salary: 150000,
       jobTitle: "HR ",
       jobDescription:
